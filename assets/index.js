@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 
 inquirer
   .prompt([
@@ -50,5 +51,11 @@ inquirer
 
   ])
   .then((response) =>
-    console.log('got it'),
+    fs.appendFile('README.md',JSON.stringify(response, null, '\t'), (err) => {
+        if(err) {
+            console.log('There was an error: ' + err);
+        } else {
+            console.log('got it');
+        }
+    })
   );
