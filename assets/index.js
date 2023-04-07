@@ -32,7 +32,7 @@ inquirer
     {
       type: 'input',
       message: 'Enter Contribution Guidelines;',
-      name: 'contibuting',
+      name: 'contributing',
     },
     {
       type: 'input',
@@ -65,17 +65,39 @@ inquirer
         for (const header of headers){
           console.log('## ' + header.toUpperCase());
         };
-        // TODO: append user inputted description
+        // TODO: append user inputted Description
         const descInput = response.description;
         console.log(descInput); 
-        // TODO: append table of contents with links
+
+        // TODO: append Table of Contents
         for (const header of headers){
           console.log("[" + header + "](#" + header + ")");
         }
-        // TODO: append to license section
+       
+        // TODO: append to Installation section
+        const installInput = response.install;
+        console.log(installInput);
+
+        // TODO: append to Usage section
+        const usageInput = response.usage;
+        console.log(usageInput);
+
+        // TODO: append to License section
         const licenseDesc = "This project is licensed under the terms of the " + response.license;
         console.log(licenseDesc);
 
+        // TODO: append to Contributing section
+        const contributionInput = response.contributing;
+        console.log(contributionInput);
+
+        // TODO: append to Tests section
+        const testInstructions = response.tests;
+        console.log(testInstructions);
+
+        // TODO: append to Questions section
+        console.log("Contact for Questions: ");
+        console.log("Github: " + response.github);
+        console.log("Email: " + response.email);
       }
     })
   });
