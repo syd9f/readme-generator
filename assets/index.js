@@ -27,7 +27,7 @@ inquirer
       type: 'list',
       message: 'Select a License from the following options:',
       name: 'license',
-      choices: ['one','two','three'],
+      choices: ['MIT License','two','three'],
     },
     {
       type: 'input',
@@ -52,16 +52,30 @@ inquirer
 
   ])
   .then((response) => {
-    // TODO: append to readme
-    const title = '## ' + response.title.toUpperCase();
-    // TODO: append each to readme as title of each section
-    const headers = ['Description','Table of Contents','Installation','Usage','License','Contributing','Tests','Questions'];
-
+   
     fs.writeFile('README.md',JSON.stringify(response, null, '\t'), (err) => {
-        if(err) {
-            console.log('There was an error: ' + err);
-        } else {
-            console.log('got it');
+      if(err) {
+        console.log('There was an error: ' + err);
+      } else {
+        // TODO: append title to readme
+        const title = '# ' + response.title.toUpperCase();
+        console.log(title);
+        // TODO: append each header to readme
+        const headers = ['Description','Table of Contents','Installation','Usage','License','Contributing','Tests','Questions'];
+        for (const header of headers){
+          console.log('## ' + header.toUpperCase());
+        };
+        // TODO: append user inputted description
+        const descInput = response.description;
+        console.log(descInput); 
+        // TODO: append table of contents with links
+        for (const header of headers){
+          console.log("[" + header + "](#" + header + ")");
         }
+        // TODO: append to license section
+        const licenseDesc = "This project is licensed under the terms of the " + response.license;
+        console.log(licenseDesc);
+
+      }
     })
   });
