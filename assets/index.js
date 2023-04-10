@@ -27,7 +27,7 @@ inquirer
       type: 'list',
       message: 'Select a License from the following options:',
       name: 'license',
-      choices: ['MIT License','two','three'],
+      choices: ['MIT License','Apache License','GNU General Public License (GPL)'],
     },
     {
       type: 'input',
@@ -36,7 +36,7 @@ inquirer
     },
     {
       type: 'input',
-      message: 'Enter Test Instructions:',
+      message: 'Enter Test Instructions:', 
       name: 'tests',
     },
     {
