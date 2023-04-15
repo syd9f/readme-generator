@@ -60,9 +60,22 @@ inquirer
     const licenseDesc = "This project is licensed under the terms of the " + response.license;
     const contributionInput = response.contributing;
     const testInstructions = response.tests;
+    // license badges
+
+    const apacheBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+    const MITBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+    const GNUBadge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+
+    if (response.license == 'MIT License') {
+      var selectedLicense = MITBadge;
+    } else if(response.license == 'Apache License') {
+      var selectedLicense = apacheBadge;
+    } else {
+      var selectedLicense = GNUBadge;
+    }
 
     // create readme using user input
-    fs.writeFile('README.md',title + '\n## ' + headers[0] + '\n' + descInput + '\n## ' + headers[1] + '\n## ' + headers[2] + '\n' + installInput + '\n## ' + headers[3] + '\n' + usageInput + '\n## ' + headers[4] + '\n' + licenseDesc + '\n## ' + headers[5] + '\n' + contributionInput + '\n## ' + headers[6] + '\n' + testInstructions + '\n## ' + headers[7] + '\n' + 'Contact for Questions: ' + '\n' + 'Github: ' + response.github + '\n' + 'Email: ' + response.email, (err) => {
+    fs.writeFile('README.md', title + '\n' + selectedLicense + '\n## ' + headers[0] + '\n' + descInput + '\n## ' + headers[1] + '\n## ' + headers[2] + '\n' + installInput + '\n## ' + headers[3] + '\n' + usageInput + '\n## ' + headers[4] + '\n' + licenseDesc + '\n## ' + headers[5] + '\n' + contributionInput + '\n## ' + headers[6] + '\n' + testInstructions + '\n## ' + headers[7] + '\n' + 'Contact for Questions: ' + '\n' + 'Github: ' + response.github + '\n' + 'Email: ' + response.email, (err) => {
       if(err) {
         console.log('There was an error: ' + err);
       } 
