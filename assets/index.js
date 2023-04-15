@@ -31,7 +31,7 @@ inquirer
     },
     {
       type: 'input',
-      message: 'Enter Contribution Guidelines;',
+      message: 'Enter Contribution Guidelines:',
       name: 'contributing',
     },
     {
