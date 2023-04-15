@@ -27,6 +27,13 @@ WHEN I enter my email address
 THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
+```
+
+## Usage
+
+![Gif](./assets/images/readme-generator.gif)
+
+When opening the project assets folder in the terminal, the user can initiate the application by typing 'node index.js'. This will begin a series of prompts that the user can answer. Once all of the prompts have been answered, a professional Readme File is generated using the answers provided.
 
 ## Credits
 https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
