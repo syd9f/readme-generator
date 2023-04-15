@@ -33,7 +33,12 @@ THEN I am taken to the corresponding section of the README
 
 ![Gif](./assets/images/readme-generator.gif)
 
+[Link to Video](https://drive.google.com/file/d/156VNzWUeiNWrLYxjCnFjhhA0ppiTzyCt/view)
+
 When opening the project assets folder in the terminal, the user can initiate the application by typing 'node index.js'. This will begin a series of prompts that the user can answer. Once all of the prompts have been answered, a professional Readme File is generated using the answers provided.
+
+## Installation
+Requires Node.js and the [Inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4)
 
 ## Credits
 https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
