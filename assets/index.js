@@ -55,6 +55,11 @@ inquirer
     const title = '# ' + response.title.toUpperCase();
     const headers = ['Description','Table of Contents','Installation','Usage','License','Contributing','Tests','Questions'];
     const descInput = response.description;
+    const installInput = response.install;
+    const usageInput = response.usage;
+    const licenseDesc = "This project is licensed under the terms of the " + response.license;
+    const contributionInput = response.contributing;
+    const testInstructions = response.tests;
 
     // add project title
     fs.writeFile('README.md',title, (err) => {
@@ -84,6 +89,11 @@ inquirer
       } 
     });
 
+        //   // TODO: append Table of Contents
+      //   for (const header of headers){
+      //     console.log("[" + header + "](#" + header + ")");
+      //   }
+
      // add Installation section title
      fs.appendFile('README.md','\n## ' + headers[2], (err) => {
       if(err) {
@@ -91,29 +101,64 @@ inquirer
       } 
     });
 
+    // add installation input
+    fs.appendFile('README.md','\n' + installInput, (err) => {
+      if(err) {
+        console.log('There was an error: ' + err);
+      } 
+    });
+
      // add Usage section title
-     fs.appendFile('README.md','\n## ' + headers[3], (err) => {
+    fs.appendFile('README.md','\n## ' + headers[3], (err) => {
+      if(err) {
+        console.log('There was an error: ' + err);
+      } 
+    });
+
+     // add Usage input
+    fs.appendFile('README.md','\n' + usageInput, (err) => {
       if(err) {
         console.log('There was an error: ' + err);
       } 
     });
 
      // add License section title
-     fs.appendFile('README.md','\n## ' + headers[4], (err) => {
+    fs.appendFile('README.md','\n## ' + headers[4], (err) => {
+      if(err) {
+        console.log('There was an error: ' + err);
+      } 
+    });
+
+    // add License input
+    fs.appendFile('README.md','\n' + licenseDesc, (err) => {
       if(err) {
         console.log('There was an error: ' + err);
       } 
     });
 
      // add Contributing section title
-     fs.appendFile('README.md','\n## ' + headers[5], (err) => {
+    fs.appendFile('README.md','\n## ' + headers[5], (err) => {
+      if(err) {
+        console.log('There was an error: ' + err);
+      } 
+    });
+
+    // add Contributing input
+    fs.appendFile('README.md','\n' + contributionInput, (err) => {
       if(err) {
         console.log('There was an error: ' + err);
       } 
     });
 
      // add Tests section title
-     fs.appendFile('README.md','\n## ' + headers[6], (err) => {
+    fs.appendFile('README.md','\n## ' + headers[6], (err) => {
+      if(err) {
+        console.log('There was an error: ' + err);
+      } 
+    });
+
+    // add Tests input
+    fs.appendFile('README.md','\n' + testInstructions, (err) => {
       if(err) {
         console.log('There was an error: ' + err);
       } 
@@ -126,38 +171,17 @@ inquirer
       } 
     });
 
+     // add Questions section title
+     fs.appendFile('README.md','\n' + 'Contact for Questions: ' + '\n' + 'Github: ' + response.github + '\n' + 'Email: ' + response.email, (err) => {
+      if(err) {
+        console.log('There was an error: ' + err);
+      } 
+    });
+
+    
+
 
   })
-
-  
-      //   // TODO: append user inputted Description
-      //   const descInput = response.description;
-      //   console.log(descInput); 
-
-      //   // TODO: append Table of Contents
-      //   for (const header of headers){
-      //     console.log("[" + header + "](#" + header + ")");
-      //   }
-       
-      //   // TODO: append to Installation section
-      //   const installInput = response.install;
-      //   console.log(installInput);
-
-      //   // TODO: append to Usage section
-      //   const usageInput = response.usage;
-      //   console.log(usageInput);
-
-      //   // TODO: append to License section
-      //   const licenseDesc = "This project is licensed under the terms of the " + response.license;
-      //   console.log(licenseDesc);
-
-      //   // TODO: append to Contributing section
-      //   const contributionInput = response.contributing;
-      //   console.log(contributionInput);
-
-      //   // TODO: append to Tests section
-      //   const testInstructions = response.tests;
-      //   console.log(testInstructions);
 
       //   // TODO: append to Questions section
       //   console.log("Contact for Questions: ");
