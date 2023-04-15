@@ -61,7 +61,7 @@ inquirer
     const contributionInput = response.contributing;
     const testInstructions = response.tests;
     const githubUrl = '[Github](https://github.com/' + response.github + ') ';
-
+    const tableOfContents = '\n1. [Description](#Description) \n2. [Installation](#Installation) \n3. [Usage](#usage) \n4. [License](#license) \n5. [Contributing](#contributing) \n6. [Tests](#tests) \n7. [Questions](#questions)\n';
     // license badges
 
     const apacheBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
@@ -77,7 +77,7 @@ inquirer
     }
 
     // create readme using user input
-    fs.writeFile('README.md', title + '\n' + selectedLicense + '\n## ' + headers[0] + '\n' + descInput + '\n## ' + headers[1] + '\n## ' + headers[2] + '\n' + installInput + '\n## ' + headers[3] + '\n' + usageInput + '\n## ' + headers[4] + '\n' + licenseDesc + '\n## ' + headers[5] + '\n' + contributionInput + '\n## ' + headers[6] + '\n' + testInstructions + '\n## ' + headers[7] + '\nContact for Questions: ' + '\n ' + githubUrl + '\nEmail: ' + response.email, (err) => {
+    fs.writeFile('README.md', title + '\n' + selectedLicense + '\n## ' + headers[0] + '\n' + descInput + '\n## ' + headers[1] + '\n' + tableOfContents + '\n## ' + headers[2] + '\n' + installInput + '\n## ' + headers[3] + '\n' + usageInput + '\n## ' + headers[4] + '\n' + licenseDesc + '\n## ' + headers[5] + '\n' + contributionInput + '\n## ' + headers[6] + '\n' + testInstructions + '\n## ' + headers[7] + '\nContact for Questions: ' + '\n ' + githubUrl + '\nEmail: ' + response.email, (err) => {
       if(err) {
         console.log('There was an error: ' + err);
       } 
